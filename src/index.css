@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-surface: #1e293b;
+}
+
+body {
+  @apply bg-slate-950 text-white antialiased;
+  margin: 0;
+  min-height: 100vh;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
