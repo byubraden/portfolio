@@ -1,16 +1,43 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary-400: #60a5fa;
-  --color-primary-500: #3b82f6;
-  --color-primary-600: #2563eb;
+  --color-primary-400: #1a8fd4;
+  --color-primary-500: #016fb9;
+  --color-primary-600: #015a94;
   --color-surface: #1e293b;
+  --color-honey: #f6ae2d;
+  --color-orange: #f26419;
+  --color-pale-slate: #c1cad6;
 }
 
 body {
-  @apply bg-slate-950 text-white antialiased;
+  background-color: #001011;
+  @apply text-white antialiased;
   margin: 0;
   min-height: 100vh;
+}
+
+@keyframes btn-shimmer {
+  0% { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+.btn-shimmer {
+  background: linear-gradient(
+    90deg,
+    #f26419 0%,
+    #f26419 30%,
+    #f5843e 50%,
+    #f26419 70%,
+    #f26419 100%
+  );
+  background-size: 250% auto;
+  animation: btn-shimmer 5s ease-in-out infinite;
+}
+
+.btn-shimmer:hover {
+  animation: none;
+  background: rgba(242, 100, 25, 0.85);
 }
 
 @keyframes scroll {

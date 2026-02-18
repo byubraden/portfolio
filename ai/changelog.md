@@ -1,6 +1,9 @@
 # Changelog
 
 ## 2026-02-17
+**Theme: New color palette**
+Updated CSS theme variables to new palette: Ink Black (#001011) as page background, Bright Marine (#016fb9) as primary-500 with a lighter primary-400 (#1a8fd4) for text/icons, Honey Bronze (#f6ae2d) for section badges, Blaze Orange (#f26419) for the Hero primary CTA. Pale Slate (#c1cad6) was noted as near-identical to existing slate-300 so no change needed there.
+
 **Contact: Removed email option**
 Removed the "Send an Email" button and HiEnvelope import. LinkedIn is now the sole CTA, centered in the card. Updated body text to remove the email reference.
 

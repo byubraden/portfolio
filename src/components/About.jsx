@@ -23,7 +23,7 @@ function About() {
       >
         {/* Header */}
         <div className="text-center mb-12">
-          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-primary-400 border border-primary-500/30 rounded-full px-4 py-1 mb-4">
+          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-honey border border-honey/30 rounded-full px-4 py-1 mb-4">
             About
           </span>
           <h2 className="text-4xl sm:text-5xl font-bold text-white italic mb-3">

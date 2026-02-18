@@ -1,10 +1,10 @@
 import { Link } from 'react-scroll'
 import { motion } from 'framer-motion'
-import { HiMapPin, HiBriefcase } from 'react-icons/hi2'
+import { HiMapPin, HiBriefcase, HiArrowRight } from 'react-icons/hi2'
 
 function CodeWindow() {
   return (
-    <div className="bg-slate-900 rounded-xl border border-slate-700/60 shadow-2xl overflow-hidden w-80">
+    <div className="bg-slate-900 rounded-xl border border-slate-700/60 shadow-2xl overflow-hidden w-96">
       {/* Title bar */}
       <div className="flex items-center gap-1.5 px-4 py-3 bg-slate-800 border-b border-slate-700/60">
         <span className="w-3 h-3 rounded-full bg-red-400/80" />
@@ -111,15 +111,22 @@ function Hero() {
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link
-              to="projects"
-              smooth={true}
-              duration={500}
-              offset={-64}
-              className="px-8 py-3 bg-primary-500 hover:bg-primary-600 text-white font-medium rounded-lg cursor-pointer transition-colors text-center"
+            <motion.div
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 17 }}
             >
-              View My Work
-            </Link>
+              <Link
+                to="projects"
+                smooth={true}
+                duration={500}
+                offset={-64}
+                className="group btn-shimmer inline-flex items-center gap-2 px-8 py-3 text-white font-medium rounded-lg cursor-pointer"
+              >
+                View My Work
+                <HiArrowRight size={16} className="transition-transform duration-200 group-hover:translate-x-1" />
+              </Link>
+            </motion.div>
             <Link
               to="contact"
               smooth={true}
