@@ -1,6 +1,9 @@
 # Changelog
 
 ## 2026-02-17
+**ScrollProgress: Vertical scroll indicator**
+Added a fixed right-side scroll progress bar (desktop only). Features a 1px track with a gradient fill from Bright Marine to Honey Bronze as you scroll, a glowing dot at the tip that shifts color to match, and small anchor dots at top and bottom. Also removed the stale bg-slate-950 override from App.jsx wrapper div.
+
 **Theme: New color palette**
 Updated CSS theme variables to new palette: Ink Black (#001011) as page background, Bright Marine (#016fb9) as primary-500 with a lighter primary-400 (#1a8fd4) for text/icons, Honey Bronze (#f6ae2d) for section badges, Blaze Orange (#f26419) for the Hero primary CTA. Pale Slate (#c1cad6) was noted as near-identical to existing slate-300 so no change needed there.
 
