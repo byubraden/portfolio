@@ -1,6 +1,19 @@
 # Changelog
 
 ## 2026-02-17
+**Contact: Removed email option**
+Removed the "Send an Email" button and HiEnvelope import. LinkedIn is now the sole CTA, centered in the card. Updated body text to remove the email reference.
+
+**Hero: Redesigned with two-column layout and animated code window**
+Left side now features status chips ("Open to full-stack roles", "Provo, UT"), a "👋 Hi, I'm" intro, large left-aligned name with "Stevens" in blue accent, and the existing CTAs. Right side shows a floating macOS-style code editor card (BradenStevens.jsx) with syntax-highlighted content and a looping float animation via Framer Motion. Code window is hidden on mobile. Left content uses a staggered entrance animation.
+
+**Navbar: Floating island on scroll + name format fix**
+Navbar transitions to a floating rounded island (max-w-4xl, rounded-2xl, border, shadow) when scrolled past 50px, lifting off the top edge with padding. At the top it remains full-width. Mobile dropdown matches the island style when scrolled. Logo updated from `</BradenStevens>` to `<bradenstevens/>`.
+
+**About: Photo left, bio + interests right**
+Restructured to photo-only left column, with bio text and interests chips stacked in the right column. Fixes the height mismatch dead space and makes the interests feel like a natural continuation of the bio rather than an afterthought.
+
+## 2026-02-17
 **Navbar: Developer-themed logo**
 Changed navbar logo from "Braden Stevens." to "</BradenStevens>" styled like an HTML/React closing tag, with the angle brackets and slash in blue accent color.
 
