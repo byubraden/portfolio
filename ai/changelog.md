@@ -1,6 +1,13 @@
 # Changelog
 
+## 2026-02-19
+**Projects: Added third image and standardized aspect ratio**
+Added analyticscompetition.jpeg to the Super Bowl Ad Analysis project. Standardized all card image areas (both real images and gradient placeholders) to aspect-[2/1] to match the analytics image's native ratio. AR Math Game retains the gradient placeholder.
+
 ## 2026-02-17
+**Hero: Animated dot grid background**
+Added a canvas-based wave dot animation behind the Hero section. A grid of dots (38px spacing) pulses in size and opacity driven by two overlapping sine waves, creating a rippling effect. Dots are Bright Marine blue at low opacity so they're visible but don't compete with the content. Uses requestAnimationFrame with proper cleanup on unmount and a resize listener.
+
 **ScrollProgress: Vertical scroll indicator**
 Added a fixed right-side scroll progress bar (desktop only). Features a 1px track with a gradient fill from Bright Marine to Honey Bronze as you scroll, a glowing dot at the tip that shifts color to match, and small anchor dots at top and bottom. Also removed the stale bg-slate-950 override from App.jsx wrapper div.
 

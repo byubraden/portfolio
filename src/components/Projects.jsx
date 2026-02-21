@@ -37,10 +37,10 @@ function Projects() {
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-48 object-cover"
+                className={`w-full aspect-[2/1] object-cover ${project.imagePosition ?? 'object-center'}`}
               />
             ) : (
-              <div className="w-full h-48 bg-gradient-to-br from-slate-700 to-slate-800 flex items-center justify-center">
+              <div className="w-full aspect-[2/1] bg-gradient-to-br from-slate-700 to-slate-800 flex items-center justify-center">
                 <span className="text-4xl font-bold text-slate-600">
                   {project.title.charAt(0)}
                 </span>

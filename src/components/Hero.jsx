@@ -1,6 +1,64 @@
+import { useEffect, useRef } from 'react'
 import { Link } from 'react-scroll'
 import { motion } from 'framer-motion'
 import { HiMapPin, HiBriefcase, HiArrowRight } from 'react-icons/hi2'
+
+function DotsBackground() {
+  const canvasRef = useRef(null)
+
+  useEffect(() => {
+    const canvas = canvasRef.current
+    const ctx = canvas.getContext('2d')
+    let animId
+    let t = 0
+    const SPACING = 38
+
+    const resize = () => {
+      canvas.width = canvas.offsetWidth
+      canvas.height = canvas.offsetHeight
+    }
+    resize()
+    window.addEventListener('resize', resize, { passive: true })
+
+    const draw = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height)
+      const cols = Math.ceil(canvas.width / SPACING) + 1
+      const rows = Math.ceil(canvas.height / SPACING) + 1
+
+      for (let row = 0; row < rows; row++) {
+        for (let col = 0; col < cols; col++) {
+          const x = col * SPACING
+          const y = row * SPACING
+          // Two overlapping sine waves for a richer ripple
+          const wave =
+            Math.sin(col * 0.45 + t) * 0.5 +
+            Math.sin(row * 0.35 + t * 0.8) * 0.5
+          const normalized = (wave + 1) / 2 // 0 → 1
+
+          const radius = 0.8 + normalized * 2
+          const opacity = 0.04 + normalized * 0.18
+
+          ctx.beginPath()
+          ctx.arc(x, y, radius, 0, Math.PI * 2)
+          ctx.fillStyle = `rgba(26, 143, 212, ${opacity})`
+          ctx.fill()
+        }
+      }
+
+      t += 0.016
+      animId = requestAnimationFrame(draw)
+    }
+
+    draw()
+
+    return () => {
+      cancelAnimationFrame(animId)
+      window.removeEventListener('resize', resize)
+    }
+  }, [])
+
+  return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
+}
 
 function CodeWindow() {
   return (
@@ -66,11 +124,13 @@ function CodeWindow() {
 
 function Hero() {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center px-4">
-      {/* Background */}
+    <section id="hero" className="relative min-h-screen flex items-center px-4 overflow-hidden">
+      {/* Gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 -z-10" />
+      {/* Animated dot grid */}
+      <DotsBackground />
 
-      <div className="max-w-6xl mx-auto w-full flex flex-col lg:flex-row items-center gap-16 py-24">
+      <div className="relative max-w-6xl mx-auto w-full flex flex-col lg:flex-row items-center gap-16 py-24">
 
         {/* Left: text content */}
         <motion.div

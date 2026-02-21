@@ -1,3 +1,8 @@
+import cineniché from '../assets/cineniche.jpeg'
+import turtleShelter from '../assets/turtleshelterproject.jpeg'
+import analyticsCompetition from '../assets/analyticscompetition.jpeg'
+import arKit from '../assets/screen-shot-2018-06-03-at-8-42-28-pm.png.webp'
+
 const projects = [
   {
     title: 'Movie Recommender',
@@ -7,7 +12,8 @@ const projects = [
     tech: ['React', '.NET', 'ML', 'Azure SQL'],
     github: null,
     live: null,
-    image: null,
+    image: cineniché,
+    imagePosition: 'object-top',
   },
   {
     title: 'Nonprofit Web App',
@@ -17,7 +23,8 @@ const projects = [
     tech: ['HTML', 'CSS', 'PostgreSQL', 'EJS', 'Node.js'],
     github: null,
     live: null,
-    image: null,
+    image: turtleShelter,
+    imagePosition: 'object-top',
   },
   {
     title: 'Super Bowl Ad Analysis',
@@ -27,7 +34,7 @@ const projects = [
     tech: ['Python', 'Tableau', 'Data Analytics'],
     github: null,
     live: null,
-    image: null,
+    image: analyticsCompetition,
   },
   {
     title: 'Augmented Reality Math Game',
@@ -37,7 +44,7 @@ const projects = [
     tech: ['Swift', 'Xcode', 'ARKit', 'iOS'],
     github: null,
     live: null,
-    image: null,
+    image: arKit,
   },
 ]
 
